@@ -1,0 +1,136 @@
+https://www.youtube.com/watch?v=ruohUTTo8Kw
+
+https://www.delftstack.com/howto/python-tkinter/how-to-use-a-timer-in-tkinter/
+
+https://www.geeksforgeeks.org/create-countdown-timer-using-python-tkinter/
+
+does not recognize draws
+
+task:
+	still have fullhouse problem kc 4s 4c 4d 2d left:qs 8c right: as 10h
+
+	the below are one second delays:
+		get bigger cards to highlight (with a pause)
+		add animation card to to show back
+		add delay (timer)
+
+	save scores in txt file
+	
+
+	
+	#for debug purpose log
+		left hand 7 cards
+		right hand 7 cards
+		5 valid cards
+		5 valid cards
+		which of the cards are bigger
+			
+	
+	game log
+		left hand 7 cards
+		right hand 7 cards
+		5 valid cards
+		5 valid cards
+		which of the cards are bigger
+
+	have various options for time limits 15, 17, 19, 21, 23, 25, 27, 30
+	
+	
+	make sure if between wheel straight and higher straight wheel straight loses (coded but not tested?)
+	
+Improvements:
+	should have done more pseudo code
+	cards should have been dictionaries
+
+poker order
+	9. straight flush (royal flush diplayed)
+	
+	8. four of a kind
+	
+	7. full house
+	
+	6. flush
+	
+	5. straight (a, 2, 3, 4, 5)
+	
+	4. three of a kind
+	
+	3. 2 pair
+	
+	2. 1 pair
+	
+	1. high card
+		
+
+pseudo code
+	def generateNineCardsList():
+		fiftyTwoCardsList = []
+
+		def generateCards():
+			# consider pictures with numbers
+			for value in [2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A"]:
+				for suit in ["D", "C", "H", "S"]:
+					fiftyTwoCardsList.append([value, suit])
+
+		print(fiftyTwoCardsList)
+		random.shuffle(fiftyTwoCardsList) # random.shuffle() doesn't return anything, it changes the original argument
+		print(fiftyTwoCardsList[0: 9])
+		
+	def generateHands(nineCardsList):
+
+		communityCardsList = nineCardsList(0,4)
+		
+		leftPrivateList = nineCardsList(7,8)
+		
+		rightPrivateList = nineCardsList(5,6)
+		
+		leftHandList = leftPrivateList + communityCardsList
+		
+		rightHandList = rightPrivateList + communityCardsList
+		
+		print([leftPrivateList, rightPrivateList, rightHandList, leftHandList])
+		
+		return [rightHandList, leftHandList]
+		
+	def returnHigherHand(rightHandList, leftHandList):
+		#determine rank, should be done from lowest rank to highest rank
+			#determineflush##############
+			#determinestraight (try with list of number combos [2,3,4,5,6],[3,4,5,6,7],[4,5,6,7,8],etc)
+			#straight combos can be calculated
+		
+		#compare rank and return higher rank, if same hand:
+			#determine higher hand and return hand (return "left", "right")
+
+	def round(generateHands(nineCardsList, higherHand) 
+		leftPrivateList, rightPrivateList, rightHandList, leftHandlist = nineCardsList
+		
+		userInput = input()
+
+		if userInput == higherHand:
+			return true
+		else:
+			return false
+			
+	#for debug delete later
+	timeLimit = True
+			
+	class Round:
+		def __init__(self, leftHand, rightHand, community):
+			gameScore = 0
+			while timeLimit and gameOver==False:
+				if round(generateHands(generateNineCardsList(), returnHigherHand(rightHandList, leftHandList)):
+					userScore += 1
+				else:
+					break
+				
+			print(f'Your score: {userScore}')
+			#record in text file with date and time
+		
+	
+	
+	
+	
+	
+	
+	
+	

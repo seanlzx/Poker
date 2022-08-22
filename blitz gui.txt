@@ -1,0 +1,77 @@
+from tkinter import *
+from SelectSeven import UTFCardList,cardFontStyle
+import tkinter.font as tkFont
+
+root = Tk()
+root.title('Poker Cards')
+root.geometry("1500x1000")
+
+timeLimit == True
+
+class CardClass:
+	def __init__(self, handFrame, cardID):
+		self.frame = frame
+		self.cardID = cardID
+		
+		cardFrame = LabelFrame(handFrame)
+		cardFrame.grid(row=0, column=gridCol)
+		
+		cardText = ""
+		cardColor = ""
+		
+		if cardID[1] == "D":
+			for UTFCard in suitGroup[0]:
+				if rank == cardID[0]:
+					cardText = UTFCard
+					cardColor = "red"
+					
+		if cardID[1] == "C":
+			for UTFCard in suitGroup[1]:
+				if rank == cardID[0]:
+					cardText = UTFCard
+					cardColor = "black"
+					
+		if cardID[1] == "H":
+			for UTFCard in suitGroup[2]:
+				if rank == cardID[0]:
+					cardText = UTFCard
+					cardColor = "red"
+					
+		if cardID[1] == "S":
+			for UTFCard in suitGroup[3]:
+				if rank == cardID[0]:
+					cardText = UTFCard
+					cardColor = "black"
+					
+		cardText - Label(cardFrame, text=cardText, font=cardFontStyle)
+		
+
+class GameClass:
+	gameScore = StringVar()
+	gameScore.set(0)
+	def __init__(self, leftHand, rightHand, communityCards):
+		while timeLimit and gameOver == False:
+			gameScoreLabel = LabelFrame(root, textVariable= gameScore.get())
+		
+			communityFrame = LabelFrame(root)
+			communityFrame.grid(row=1, column=0)
+		
+			leftHandFrame = LabelFrame(root)
+			leftHandFrame.grid(row=2, column=0)
+			
+			leftHandButton = Button(root)
+			leftHandButton.grid(row=3, column=0)
+			
+			rightHandFrame = LabelFrame(root)
+			rightHandFrame.grid(row=2, column=1)
+	
+			leftHandButton = Button(root)
+			leftHandButton.grid(row=3, column=1)
+			
+			
+			
+	def insertIntoFrame(self, handFrame, cardList):
+		for i, card in enumerate(cardList):
+			CardClass(handFrame, card, i)
+
+root.mainloop
